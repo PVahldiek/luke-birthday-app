@@ -1,0 +1,1 @@
+Hier deine Luke-Fotos und -Videos ablegen. Siehe README.md im Projektordner für empfohlene Dateinamen und Einbauhinweise.
