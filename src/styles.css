@@ -724,6 +724,67 @@ h2 {
   background: #000;
 }
 
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff8f2;
+  text-align: center;
+  padding: 24px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+
+.loading-screen-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-luke {
+  width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.loading-screen h2 {
+  color: #69433e;
+  font-size: 1.5rem;
+}
+
+.loading-screen p {
+  color: #876b64;
+}
+
+.loading-spinner {
+  width: 35px;
+  height: 35px;
+  margin-top: 20px;
+  border: 4px solid #ead8d0;
+  border-top-color: #a96f62;
+  border-radius: 50%;
+  animation: loading-spin .8s linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+  }
+}
+
 /* Herunterfallen und Aufsetzen */
 @keyframes meme-glasses-drop {
   0% {

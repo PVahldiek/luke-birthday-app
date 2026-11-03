@@ -15,6 +15,15 @@ interface Trick {
   selector: 'app-root',
   standalone: true,
   template: `
+    @if (isLoading) {
+      <div class="loading-screen" role="status" aria-live="polite">
+        <div class="loading-paw">🐶</div>
+        <h2>Luke is preparing your surprise...</h2>
+        <p>Bitte einen kleinen Moment warten! 🐾</p>
+        <div class="loading-spinner"></div>
+      </div>
+    }
+
     <main class="page-shell">
       <header class="topbar">
         <a class="brand" href="#" (click)="goHome($event)">
@@ -394,10 +403,84 @@ interface Trick {
       </footer>
     </main>
   `,
+  styles: [`
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      background: #fff8f2;
+      text-align: center;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+
+    .loading-paw {
+      font-size: 76px;
+      margin-bottom: 18px;
+      animation: loading-bounce 1.2s ease-in-out infinite;
+    }
+
+    .loading-screen h2 {
+      color: #69433e;
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+    }
+
+    .loading-screen p {
+      color: #876b64;
+      margin: 0;
+    }
+
+    .loading-spinner {
+      width: 35px;
+      height: 35px;
+      margin-top: 24px;
+      border: 4px solid #ead8d0;
+      border-top-color: #a96f62;
+      border-radius: 50%;
+      animation: loading-spin .8s linear infinite;
+    }
+
+    @keyframes loading-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loading-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .loading-spinner,
+      .loading-paw {
+        animation: none;
+      }
+    }
+  `],
   styleUrl: '../styles.css'
 })
 export class AppComponent {
   screen: Screen = 'welcome';
+
+  isLoading = true;
+
+  private readonly imagesToPreload = [
+    'assets/luke-start.jpg',
+    'assets/luke-text.jpg',
+    'assets/luke-end.jpg'
+  ];
 
   completed = [false, false, false, false];
   activeMeme: number | null = null;
@@ -455,6 +538,27 @@ export class AppComponent {
       label: 'Persönliche Zustellung unterwegs'
     }
   ];
+
+  ngOnInit(): void {
+    void this.preloadImages();
+  }
+
+  private async preloadImages(): Promise<void> {
+    await Promise.all(
+        this.imagesToPreload.map(async (src) => {
+          const img = new Image();
+          img.src = src;
+
+          try {
+            await img.decode();
+          } catch {
+            // Don't block the page if an image cannot be loaded.
+          }
+        })
+    );
+
+    this.isLoading = false;
+  }
 
   get completedCount(): number {
     return this.completed.filter(Boolean).length;
