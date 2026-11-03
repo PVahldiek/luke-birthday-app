@@ -35,23 +35,33 @@ interface Trick {
               GEHEIME NACHRICHT · NUR FÜR DICH
             </div>
 
-            <div class="dog-stamp" aria-label="Hund mit Sonnenbrille">
-              🐶<span class="sunglasses">🕶️</span>
+            <div class="luke-start-frame">
+              <img
+                  class="luke-photo luke-start-photo"
+                  src="assets/luke-start.jpg"
+                  alt="Luke mit seinem Geburtstagsgruß für Lena"
+              />
+
+              <div class="meme-glasses" aria-hidden="true">
+                <span class="glasses-lens glasses-lens-left"></span>
+                <span class="glasses-lens glasses-lens-right"></span>
+              </div>
             </div>
 
-            <p class="overline">WUFF WUFF. WIR HABEN ETWAS FÜR DICH!</p>
+            <p class="overline">WUFF WUFF. LENA, WIR HABEN ETWAS FÜR DICH!</p>
 
-            <h1>Wir haben eine<br><em>kleine Überraschung</em><br>für dich.</h1>
+            <h1>Hey Lena,<br><em>heute ist dein Tag!</em></h1>
 
             <p class="lead">
-              Hier sind Passi und Luke! Wir haben uns etwas ganz Besonderes
-              für deinen Geburtstag überlegt. Eine kleine Mission wartet auf dich –
-              und wir hoffen, du hast genauso viel Spaß dabei wie wir.
+              Wir zwei haben uns etwas ganz Besonderes für dich überlegt.
+              Passi hat geplant, Luke hat geholfen (zumindest moralisch)
+              und gemeinsam haben wir eine kleine Überraschung vorbereitet.
+              Bist du bereit?
             </p>
 
             <div class="speech-bubble">
-              „Ich durfte sogar bei der Planung helfen. Na gut, Passi hat die Arbeit
-              gemacht. Ich war für die Qualitätskontrolle zuständig.“
+              „Lena, ich habe gehört, es gibt heute etwas zu feiern.
+              Ich hoffe, es gibt auch Kuchen. Und Käse. Hauptsächlich Käse.“
               <small>— Luke 🐾</small>
             </div>
 
@@ -59,7 +69,9 @@ interface Trick {
               MISSION STARTEN <span>→</span>
             </button>
 
-            <p class="tiny-note">Mit ganz viel Liebe geplant. Von uns beiden. ❤️</p>
+            <p class="tiny-note">
+              Mit ganz viel Liebe geplant. Von uns beiden. ❤️
+            </p>
           </div>
         }
 
@@ -68,38 +80,55 @@ interface Trick {
             <div class="section-icon">💌</div>
             <p class="eyebrow">EINE NACHRICHT VON UNS BEIDEN</p>
 
-            <h1>Hey, <em>Lieblingsmensch.</em></h1>
+            <h1>Für dich,<br><em>liebe Lena.</em></h1>
+
+            <img
+                class="luke-photo luke-text-photo"
+                src="assets/luke-text.jpg"
+                alt="Luke für Lena"
+            />
 
             <div class="message-card">
+              <p>Liebe Lena,</p>
+
               <p>
-                Heute ist dein Tag und wir möchten dir einfach sagen,
-                wie unglaublich froh wir sind, dich zu haben.
+                heute ist dein 25. Geburtstag und wir möchten diesen Tag nutzen,
+                um dir zu sagen, wie unglaublich froh wir sind, dich zu haben.
               </p>
 
               <p>
-                Du machst unser Leben schöner, wärmer und jeden Tag ein
-                kleines bisschen besonderer. Mit dir wird selbst aus den
-                ganz normalen Momenten etwas Wunderschönes.
+                Du bist für mich so viel mehr als nur meine Freundin.
+                Du bist mein Lieblingsmensch, meine beste Vertraute,
+                mein Zuhause und die Person, mit der ich am liebsten
+                jeden noch so kleinen Moment teile.
               </p>
 
               <p>
-                Danke für all die Liebe, die du uns schenkst, für deine
-                Geduld, dein Lachen, die gemeinsamen Erinnerungen und
-                natürlich für all die Streicheleinheiten und Kuscheleinheiten.
+                Ich liebe dein Lachen, deine Art, deine kleinen Eigenheiten
+                und einfach alles, was dich zu dem Menschen macht,
+                der du bist. Ich bin unglaublich dankbar für alles,
+                was wir schon zusammen erlebt haben, und freue mich
+                auf alles, was noch vor uns liegt.
               </p>
 
               <p>
-                Wir sind unglaublich glücklich, dich an unserer Seite zu haben.
-                Du bist für uns etwas ganz Besonderes und wir hoffen,
-                dass wir dir heute ein kleines Stück von all dem zurückgeben können.
+                Und auch Luke könnte sich wohl keinen besseren Menschen
+                an seiner Seite wünschen. Danke für all die Streicheleinheiten,
+                die Kuschelstunden und natürlich dafür, dass du ihn so sehr liebst.
+              </p>
+
+              <p>
+                Wir beide haben dich unglaublich lieb und hoffen,
+                dass wir dir heute ein kleines Lächeln ins Gesicht zaubern können.
               </p>
 
               <p class="signature">In Liebe, dein Passi ❤️</p>
-              <p class="signature">Und natürlich dein Luke 🐾</p>
+              <p class="signature">Und dein kleiner Luke 🐾</p>
             </div>
 
             <div class="meme-line">
-              PASSI HAT DIE ÜBERRASCHUNG GEPLANT. LUKE HAT SIE GENEHMIGT.
+              PASSI HAT DIESEN TEXT GESCHRIEBEN.
+              LUKE HAT WÄHRENDESSEN GESCHLAFEN.
             </div>
 
             <button class="primary-button" (click)="setScreen('training')">
@@ -111,14 +140,15 @@ interface Trick {
         @if (screen === 'training') {
           <div class="content-screen">
             <div class="section-icon">🎓</div>
-            <p class="eyebrow">UNSERE GEHEIME PRÜFUNG</p>
+            <p class="eyebrow">LUKES GEHEIME GEBURTSTAGSPRÜFUNG</p>
 
-            <h1>Vier Aufgaben.<br><em>Ein Geburtstagsprofi.</em></h1>
+            <h1>Na Lena,<br><em>bereit für die Prüfung?</em></h1>
 
             <p class="lead compact">
-              Wir haben vier kleine Aufgaben für dich vorbereitet.
-              Luke hat seine besten Tricks ausgesucht und wartet schon
-              ganz gespannt darauf, dich zu beeindrucken. 😉
+              25 Jahre alt und hoffentlich noch fit genug für Lukes
+              kleine Tricks! Wir haben vier Aufgaben für dich vorbereitet.
+              Luke freut sich schon darauf, dir seine Talente zu zeigen.
+              Ob du wohl alle schaffst? 😉
             </p>
 
             <div class="progress-wrap">
@@ -165,8 +195,9 @@ interface Trick {
 
             @if (completedCount === 4) {
               <div class="success-note">
-                🏆 BESTANDEN! Wir sind stolz auf dich!
-                Luke verlangt jetzt allerdings eine angemessene Belohnung.
+                🏆 GESCHAFFT, LENA! 4 VON 4!
+                Wir sind stolz auf dich. Luke ist begeistert und erwartet
+                jetzt selbstverständlich seine Belohnung.
               </div>
 
               <button class="primary-button" (click)="startDelivery()">
@@ -186,36 +217,38 @@ interface Trick {
             @if (!deliveryStarted) {
               <div class="section-icon">🙈</div>
 
-              <p class="eyebrow">EINE KLEINE BITTE VON UNS BEIDEN</p>
+              <p class="eyebrow">EINE KLEINE BITTE AN DICH, LENA</p>
 
-              <h1>Bitte kurz<br><em>die Augen schließen.</em></h1>
+              <h1>Jetzt wird's<br><em>spannend!</em></h1>
 
               <div class="final-illustration">🐶❤️🐾</div>
 
               <div class="message-card">
                 <p>
-                  So, unsere Lieblingsperson. Deine Mission hast du erfolgreich
-                  gemeistert!
+                  So Lena, deine Mission hast du erfolgreich gemeistert!
+                  Wir hoffen, du hattest ein bisschen Spaß mit unserem kleinen Spiel.
                 </p>
 
                 <p>
-                  Wir haben noch eine Kleinigkeit für dich vorbereitet.
-                  Und jetzt kommt der wichtigste Teil:
+                  Aber natürlich haben wir uns nicht nur deswegen so viel Mühe gemacht.
+                  Wir haben noch eine kleine Überraschung für dich vorbereitet.
                 </p>
 
                 <p>
-                  Schließe bitte kurz deine Augen und lass dich überraschen.
-                  Wir versprechen, es lohnt sich. ❤️
+                  Deshalb haben wir jetzt nur noch eine Bitte:
+                  Schließe kurz deine Augen und lass dich überraschen.
                 </p>
 
-                <p class="signature">
-                  Passi & Luke
+                <p>
+                  Du bist heute unser Geburtstagskind und hast es mehr als verdient,
+                  verwöhnt zu werden. ❤️
                 </p>
+
+                <p class="signature">Dein Passi & dein Luke ❤️</p>
               </div>
 
               <div class="meme-line">
-                PASSI IST AUFGEREGT. LUKE IST AUFGEREGT.
-                (HAUPTSÄCHLICH WEGEN DER SNACKS.)
+                LENA, NICHT SCHUMMELN! LUKE HAT EIN AUGE AUF DICH.
               </div>
 
               <button class="primary-button" (click)="showDelivery()">
@@ -228,12 +261,12 @@ interface Trick {
 
               <p class="eyebrow">PASSI & LUKE'S DELIVERY SERVICE</p>
 
-              <h1>Deine Überraschung<br><em>ist unterwegs!</em></h1>
+              <h1>Lena, deine Überraschung<br><em>ist unterwegs!</em></h1>
 
               <p class="lead compact">
-                Wir haben etwas ganz Besonderes für dich vorbereitet.
-                Die Vorbereitungen sind abgeschlossen und deine persönliche
-                Lieferung ist fast am Ziel.
+                Wir haben etwas für dich vorbereitet und können es kaum erwarten,
+                dir deine Überraschung zu überreichen.
+                Die letzten Vorbereitungen laufen bereits.
               </p>
 
               <div class="tracking-card">
@@ -269,21 +302,21 @@ interface Trick {
               <div class="delivery-note">
                 <div class="big-paw">🐾</div>
 
-                <h2>Wir haben etwas für dich!</h2>
+                <h2>Dein Geschenk wartet!</h2>
 
                 <p>
-                  Wir hoffen, du freust dich über unsere kleine Überraschung.
-                  Sie kommt von Herzen und wurde mit ganz viel Liebe vorbereitet.
+                  Liebe Lena, wir hoffen, dass du dich freust.
+                  Wir haben uns Gedanken gemacht, weil du uns so viel bedeutest.
+                  Und jetzt ist es endlich so weit!
                 </p>
 
                 <p>
-                  Leg dein Handy jetzt kurz zur Seite und komm zu uns.
-                  Wir warten schon auf dich!
+                  Leg dein Handy kurz zur Seite und komm zu uns.
+                  Passi und Luke warten schon ganz gespannt auf dich.
                 </p>
 
                 <p class="tiny-note">
-                  Persönliche Übergabe durch Passi & Luke.
-                  Kuscheleinheiten inklusive. ❤️
+                  Persönliche Übergabe durch deine zwei Lieblingsjungs. ❤️
                 </p>
               </div>
 
@@ -300,45 +333,52 @@ interface Trick {
 
             <p class="eyebrow">MISSION ERFOLGREICH ABGESCHLOSSEN</p>
 
-            <h1>Happy 25th<br><em>Birthday!</em></h1>
+            <h1>Happy 25th<br><em>Birthday, Lena!</em></h1>
 
-            <div class="final-illustration">🐶🎁🐾</div>
+            <img
+                class="luke-photo luke-end-photo"
+                src="assets/luke-end.jpg"
+                alt="Luke gratuliert Lena zum Geburtstag"
+            />
 
             <div class="message-card">
+              <p>Liebe Lena,</p>
+
               <p>
-                25 Jahre – und noch so viele wunderschöne Abenteuer,
-                Erinnerungen und besondere Momente vor dir!
+                25 Jahre voller Erlebnisse,
+                Erfahrungen, schöner Momente und ganz vieler Erinnerungen.
+                Und das Beste kommt hoffentlich noch!
               </p>
 
               <p>
-                Wir hoffen, du hast dich über deine Überraschung gefreut.
-                Du bist ein ganz besonderer Mensch und wir sind unglaublich
-                glücklich, dich in unserem Leben zu haben.
+                Ich wünsche dir von ganzem Herzen, dass du dir deine
+                wundervolle Art bewahrst, weiterhin so viel lachst und
+                jeden Tag Gründe findest, glücklich zu sein.
               </p>
 
               <p>
-                Für dein neues Lebensjahr wünschen wir dir ganz viel
-                Glück, Gesundheit, Liebe und unzählige Gründe zum Lachen.
-                Bleib genauso wundervoll, wie du bist!
+                Ich bin unglaublich froh, dich an meiner Seite zu haben.
+                Danke, dass du mein Leben so viel schöner machst.
+                Ich freue mich auf jedes weitere Abenteuer mit dir,
+                auf all die kleinen Alltagsmomente und auf unsere gemeinsame Zukunft.
               </p>
 
               <p>
-                Auf die nächsten gemeinsamen Jahre, viele Abenteuer,
-                Kuschelstunden und jede Menge schöne Erinnerungen.
+                Und natürlich wünschen wir dir auch ganz viele Kuschelstunden,
+                schöne Spaziergänge und jede Menge Leckerlis (zumindest Luke).
               </p>
 
-              <p class="signature">In Liebe, dein Passi ❤️</p>
-              <p class="signature">Und dein kleiner Luke 🐾</p>
+              <p>
+                Auf dich, auf deinen Geburtstag und auf alles, was noch kommt!
+              </p>
+
+              <p class="signature">Ich liebe dich. Dein Passi ❤️</p>
+              <p class="signature">Und ganz viele feuchte Hundeküsschen von Luke 🐾</p>
             </div>
 
             <div class="meme-line">
-              25 JAHRE ALT, ABER FÜR LUKE IMMER NOCH DIE BESTE
-              LECKERLI-LIEFERANTIN. ❤️
-            </div>
-
-            <div class="meme-line">
-              PS: LUKE SAGT, DU DARFST IHN JETZT AUSGIEBIG KNUDDELN.
-              PASSI ÜBRIGENS AUCH. ❤️
+              25 JAHRE LENA. FÜR PASSI DIE NUMMER 1,
+              FÜR LUKE DIE NUMMER 1 BEIM KUSCHELN. ❤️
             </div>
 
             <button class="secondary-button" (click)="goHome()">
@@ -382,19 +422,19 @@ export class AppComponent {
       detail: ''
     },
     {
-      name: 'Peng!',
-      emoji: '🔫',
-      command: 'Einmal hinlegen und sich ganz tot stellen.',
-      meme: 'Dramatisches Talent. Oscar-reif. Wo ist mein Käse?',
-      detail: ''
-    },
-    {
       name: 'Schäm dich!',
       emoji: '🙈',
       command: 'Pfote über die Schnauze – wie unschuldig!',
       meme: 'Ich? Etwas angestellt? Ich weiß von nichts!',
       detail: ''
     },
+    {
+      name: 'Peng!',
+      emoji: '💥',
+      command: 'Einmal hinlegen und sich ganz tot stellen.',
+      meme: 'Dramatisches Talent. Oscar-reif. Wo ist mein Käse?',
+      detail: ''
+    }
   ];
 
   readonly deliverySteps = [
