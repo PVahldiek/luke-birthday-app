@@ -505,6 +505,13 @@ export class AppComponent {
       detail: ''
     },
     {
+      name: 'Fang!',
+      emoji: '🍖',
+      command: 'Leckerli hochwerfen und mit dem Maul auffangen.',
+      meme: 'Reflexe wie ein Ninja. Hauptsache, das Leckerli landet nicht auf dem Boden!',
+      detail: ''
+    },
+    {
       name: 'Schäm dich!',
       emoji: '🙈',
       command: 'Pfote über die Schnauze – wie unschuldig!',
